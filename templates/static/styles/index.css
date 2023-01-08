@@ -1,0 +1,77 @@
+.ftt{
+	background-color: #5b5e63;
+	padding-top:100px ;
+	height:0px ;
+	margin-top:20px ;
+
+}
+@inlcude "compass/css3";
+/******************** The Flexbox Magic. ********************
+
+/* Make the main content area grow to take up leftover space. 'auto' was added as it apparently makes it compatible with IE 10.*/
+/************************************************** The Styles below are just to make the demo pretty. **************************************************/
+ .hero {
+	 background:#DEEAFA url('https://geekflare.com/wp-content/uploads/2022/03/IllustrationforBusinessForecasting.jpeg') no-repeat 0 0;
+	 background-size: cover;
+	 padding: 2.6em 0;
+	 margin-bottom:50px;
+}
+ .hero-content {
+	 background: #454d55;
+	 border-radius: 6px;
+	 padding: 1.5em;
+}
+ .hero-content h1 {
+	 font-size: 2.3rem;
+	 color: #eee;
+}
+ .hero-content h2 {
+	 font-size: 1.1rem;
+	 margin-bottom: 1.5em;
+	 color: #bbb;
+	 font-weight: normal;
+}
+ .features {
+	 list-style: none;
+	 color: #eee;
+	 padding: 0;
+}
+ .features li {
+	 padding: 0.5rem;
+	 margin: 0 12px 12px 0;
+	 display: inline-block;
+	 border-radius: 4px;
+}
+ .features .all-css {
+	 background: firebrick;
+}
+ .features .js-free {
+	 background: steelblue;
+}
+ header, footer {
+	 color: #38678f;
+	 background-color: #afb5bd;
+}
+.bt{
+	padding-left: 0%;
+	padding-top: 200px;
+	
+	
+}
+
+
+p.copyright {
+	position: absolute;
+	width: 100%;
+	color: #fff;
+	line-height: 40px;
+	font-size: 1em;
+	text-align: center;
+	bottom:0;
+}
+.ftt {
+	position: relative;
+	height: 100px;
+	width: 100%;
+	background-color: #333333;
+}

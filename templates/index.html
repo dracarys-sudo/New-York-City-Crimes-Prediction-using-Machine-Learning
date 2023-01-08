@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <link rel="stylesheet" href="./static/styles/index.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e9b7f5ba69e94b589746dc1898061e42 {
+                    position: relative;
+                    width: 100%;
+                    height: 600.0px;
+                }
+            </style>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+</head>
+<section class="hero">
+    <div class="container">
+      <div class="hero-content">
+    <h1>Analysis and prediction of crimes in New York City using a machine learning approach and spatiotemporal data :</h1>
+        <h2>For more details , you can see the source code or the article .</h2> 
+        <ul class="features">
+          <li class="all-css">
+          <a href="https://www.linkedin.com/in/afli-ramzi-a17522200/"  style="color: white;" >
+            Source
+            </a>
+            
+        </li> 
+         <li class="js-free">
+            <a href="https://www.linkedin.com/in/afli-ramzi-a17522200/" style="color: white;">
+                Article
+            </a>
+            </li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+<body class="bd">    
+            <div class="container">
+            <form method="POST" action="">
+                <input type="hidden" name="coords" id="coords" size="0">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="validationDefault01" placeholder="First name" name="name" value="Your name" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="age">Age</label>
+                      <input type="number" class="form-control" id="validationDefault02" placeholder="Age" name="age" value="Your age" required>
+                    </div>
+
+
+                  <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="sexe">Sexe</label>
+                        <select  class="form-control" name="sexe" id="sexe">
+                    <option selected>Choose...</option>
+                    <option value="F">Female</option>
+                    <option value="M">Male</option>
+                    <option value="D">Company</option>
+                    <option value="E">PSNY/People of the State of New York</option>
+                    <option value="U">UNKNOWN</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="race">Race</label>
+                        <select  class="form-control" name="Race" id="Race">
+                        <option selected>Choose...</option>
+                        <option value="a">AMERICAN INDIAN/ALASKAN NATIVE</option>
+                        <option value="b">ASIAN / PACIFIC ISLANDER</option>
+                        <option value="c">BLACK</option>
+                        <option value="d">BLACK HISPANIC</option>
+                        <option value="e">UNKNOWN</option>
+                        <option value="f">WHITE</option>
+                        <option value="g">WHITE HISPANIC</option>
+                        <option value="o">RACE OTHER</option>
+                        </select> 
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="PATROL_BORO">Patrol Borough</label>
+                        <select class="form-control" name="PATROL_BORO" id="PATROL_BORO" >
+                        <option selected>Choose...</option>
+                        <option value="a">BORO BKLYN NORTH</option>
+                        <option value="b">BORO BKLYN SOUTH</option>
+                        <option value="c">BORO BRONX</option>
+                        <option value="d">BORO MAN NORTH</option>
+                        <option value="e">BORO MAN SOUTH</option>
+                        <option value="f">BORO QUEENS NORTH</option>
+                        <option value="g">BORO QUEENS SOUTH</option>
+                        <option value="o">BORO STATEN ISLAND</option>
+                        </select>
+                    </div>
+                  </div>
+                 <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="BORO">Borough</label>
+                        <select  class="form-control"name="BORO" id="BORO">
+                    <option selected>Choose...</option>
+                    <option value="a">BRONX</option>
+                    <option value="b">BROOKLYN</option>
+                    <option value="c">MANHATTAN</option>
+                    <option value="d">QUEENS</option>
+                    <option value="e">STATEN ISLAND</option>
+                        </select>
+                    </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="LOC_OF_OCCUR">Location of Occurence </label>
+                            <select class="form-control"name="LOC_OF_OCCUR" id="LOC_OF_OCCUR">
+                        <option selected>Choose...</option>
+                        <option value="a">FRONT OF</option>
+                        <option value="b">INSIDE</option>
+                        <option value="c">OPPOSITE OF</option>
+                        <option value="d">REAR OF</option>
+                        <option value="e">UNKNOWN</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="name">Date & Time </label>
+                            <input type="datetime-local" id="trip_time"
+                            name="trip_time" value="2021-01-01T00:00"
+                            min="2020-12-07T00:00" max="2030-06-14T00:00" class="form-control" required>
+                        </div>
+                    </div>
+
+
+
+                 </div>
+                  <div class="bt">
+                  <input type="submit" data-target="#editModal" value=" Submit " class="btn btn-secondary" 
+                  style="  width: 100%; padding-top: 20px; background-color: #333333; color: white;"
+                  >
+                </div>
+            </form>
+            <br>
+            <a style="color: black; padding-left: 45%; font-size: 2em;">Pick up a  place </a>
+            <br>
+            <div class="folium-map" id="map_e9b7f5ba69e94b589746dc1898061e42" ></div>
+
+        </div>
+        
+
+        </body>
+
+<script>    
+    
+            var map_e9b7f5ba69e94b589746dc1898061e42 = L.map(
+                "map_e9b7f5ba69e94b589746dc1898061e42",
+                {
+                    center: [40.712784, -74.005941],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            var tile_layer_7c35ed634adc4429b46d7a152c7b5e7b = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 16, "maxZoom": 16, "minZoom": 12, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e9b7f5ba69e94b589746dc1898061e42);
+        
+    
+            var options = {
+              position: "topleft",
+              draw: {"circle": false, "circlemarker": false, "marker": true, "polygon": false, "polyline": false, "rectangle": false},
+              edit: {"edit": false},
+            }
+            // FeatureGroup is to store editable layers.
+            var drawnItems = new L.featureGroup().addTo(
+                map_e9b7f5ba69e94b589746dc1898061e42
+            );
+            options.edit.featureGroup = drawnItems;
+            var draw_control_779fae713863423394a0a293dd60db6d = new L.Control.Draw(
+                options
+            ).addTo( map_e9b7f5ba69e94b589746dc1898061e42 );
+            
+            map_e9b7f5ba69e94b589746dc1898061e42.on(L.Draw.Event.CREATED, function(e) {
+                var layer = e.layer,
+                    type = e.layerType;
+                var coords = JSON.stringify(layer.toGeoJSON());
+                document.getElementById("coords").value = coords;
+
+                layer.on('click', function() {
+                    document.getElementById("coords").value = coords;
+                    console.log(coords);
+                });
+                drawnItems.addLayer(layer);
+             });
+            map_e9b7f5ba69e94b589746dc1898061e42.on('draw:created', function(e) {
+                drawnItems.addLayer(e.layer);
+            });
+            
+        
+</script>
+<footer class="ftt">
+    <div class="footerContainer">
+        
+        <p class="copyright">© Afli Ramzi && Oumayma Mhamdi</p>
+    </div>
+</footer>
